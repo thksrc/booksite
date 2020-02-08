@@ -5,4 +5,5 @@ flask-session
 flask-script
 requests
 gunicorn
+werkzeug
 psycopg2-binary
