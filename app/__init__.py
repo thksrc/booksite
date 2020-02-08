@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_session import Session
 import os
 
 if not os.getenv("DATABASE_URL"):
@@ -8,13 +9,15 @@ if not os.getenv("DATABASE_URL"):
 
 db = SQLAlchemy()
 migrate = Migrate()
+sess = Session()
 
 def create_app():
     app = Flask(__name__,
                 template_folder='../client/templates',
                 static_folder='../client/static')
-    app.config.from_object('app.config.DevelopmentConfig')
+    app.config.from_object('app.config.ProductionConfig')
 
+    sess.init_app(app)
     db.init_app(app)
     migrate.init_app(app, db)
 

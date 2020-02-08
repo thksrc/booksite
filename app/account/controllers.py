@@ -34,9 +34,7 @@ def login():
 
 @account_bp.route("/logout")
 def logout():
-    session['logged_in'] = False
-    session['user_id'] = None
-    session['username'] = None
+    session.clear()
     return redirect(url_for('main.home'))
 
 @account_bp.route("/register", methods=["GET", "POST"])
