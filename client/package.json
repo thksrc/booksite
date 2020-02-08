@@ -1,0 +1,13 @@
+{
+  "name": "booksite",
+  "version": "1.0.0",
+  "description": "Books site app project for CS50 web programming course",
+  "scripts": {
+    "build:css": "npx tailwind build static/css/main.css -o static/css/styles.css"
+  },
+  "author": "Timothy Tso",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^1.1.4"
+  }
+}

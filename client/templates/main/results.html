@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="text-3xl font-bold text-center my-8">Results</h1>
+    <div class="w-5/12 m-auto">
+        <hr>
+        <div class="flex flex-wrap justify-center mt-4">
+            {% for book in books %}
+                    <div class="w-1/4 rounded overflow-hidden shadow-lg">
+                        <a href="{{ url_for('main.book', isbn=book.isbn) }}">
+                            <div class="px-6 py-6">
+                                <div class="font-bold text-xl mb-2">
+                                    {{ book.title }}
+                                </div>
+                                <p class="text-gray-700">{{ book.author }}</p>
+                                <p class="text-gray-700">{{ book.year }}</p>
+                                <p class="text-gray-700">{{ book.isbn }}</p>
+                            </div>
+                        </a>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
