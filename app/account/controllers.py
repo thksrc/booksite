@@ -5,7 +5,7 @@ from app.utils import set_password, check_password
 
 account_bp = Blueprint("account", __name__)
 
-@account_bp.route("/login/", methods=["GET", "POST"])
+@account_bp.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
         if session.get('logged_in') is True:
@@ -32,14 +32,14 @@ def login():
             session['username'] = user_db.username
             return redirect(url_for('main.home'))
 
-@account_bp.route("/logout/")
+@account_bp.route("/logout")
 def logout():
     session['logged_in'] = False
     session['user_id'] = None
     session['username'] = None
     return redirect(url_for('main.home'))
 
-@account_bp.route("/register/", methods=["GET", "POST"])
+@account_bp.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "GET":
         if session.get('logged_in') is True:
@@ -75,7 +75,7 @@ def register():
             session['username'] = user_db.username
             return redirect(url_for('main.home'))
 
-@account_bp.route("/profile/")
+@account_bp.route("/profile")
 def profile():
     if session.get('logged_in') is True:
         user_data = {

@@ -13,7 +13,7 @@ def home():
     else:
         return redirect(url_for('account.login'), "403")
 
-@main_bp.route("/search/", methods=["GET"])
+@main_bp.route("/search", methods=["GET"])
 def search():
     if session.get('logged_in') is True:
         if not request.args.get("book"):
