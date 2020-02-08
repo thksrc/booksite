@@ -4,7 +4,6 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
     SESSION_TYPE = 'filesystem'
-    SESSION_PERMANENT = False
     SECRET_KEY = os.getenv('SECRET_KEY')
     CSRF_ENABLED = True
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
