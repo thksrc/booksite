@@ -21,6 +21,8 @@ def search():
         search = request.args.get("book")
         query = "%{}%".format(search)
         books = Book.query.filter(Book.isbn.like(query) | Book.title.like(query) | Book.author.like(query)).limit(15).all()
+        if len(books) == 0:
+            return render_template("main/home.html", homepage=True, error="No Results")
         return render_template("main/results.html", title="Search", books=books)
     else:
         return redirect(url_for('main.home'))
