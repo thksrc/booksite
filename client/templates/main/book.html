@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="mt-8">
-            {% if reviews[0] is not defined %}
+            {% if reviews[0] is defined %}
                 <h1 class="text-3xl font-bold">Reviews</h1>
             {% endif %}
             {% for review in reviews %}
