@@ -2,8 +2,6 @@
 
 *Booksite is a book reviews site implemented using the micro framework Flask, SQLAlchemy, the Goodreads API, Tailwind CSS, and Heroku for deployment.*
 
-> The deployed website can be found [here](https://booksitewd.herokuapp.com/)
-
 This project is heavily based off of the CS50 web development course project 1, which can be found [here](https://docs.cs50.net/ocw/web/projects/1/project1.html). I changed a lot of the original requirements and implemented things according to how a full flask application would be like. As such, I use features like Blueprints to seperate different parts of the application, and I seperate all of my front end code.
 
 ## Features
